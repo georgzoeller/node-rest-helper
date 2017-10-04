@@ -1,0 +1,31 @@
+{
+  "name": "node-rest-helper",
+  "version": "0.0.1",
+  "description": "Simple REST helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "env-cmd ./.env.local node_modules/.bin/mocha --ui bdd --compilers coffee:coffeescript/register test/",
+    "build": "./node_modules/.bin/coffee -o dist -c ./src",
+    "coffeelint": "./node_modules/.bin/coffeelint -c ./src",
+    "lint": "./node_modules/.bin/eslint -f table --cache dist",
+    "start": "env-cmd ./.env.local node --harmony ./dist/test.js"
+  },
+  "author": "georgzoeller",
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.2.1"
+  },
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-rate-limiter": "^1.0.1"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.16.0",
+    "coffeelint-throw-inside-async": "^0.0.2",
+    "coffeescript": "^2",
+    "env-cmd": "^5.1.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.4.1",
+    "should": "^11.2.1"
+  }
+}
