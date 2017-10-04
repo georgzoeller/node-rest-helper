@@ -1,8 +1,8 @@
 {
   "name": "node-rest-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple REST helper",
-  "main": "index.js",
+  "main": "./dist/node-rest-helper.js",
   "scripts": {
     "test": "env-cmd ./.env.local node_modules/.bin/mocha --ui bdd --compilers coffee:coffeescript/register test/",
     "build": "./node_modules/.bin/coffee -o dist -c ./src",
