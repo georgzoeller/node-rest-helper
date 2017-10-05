@@ -1,6 +1,6 @@
 {
   "name": "node-rest-helper",
-  "version": "0.0.3",
+  "version": "0.0.31",
   "description": "Simple REST helper",
   "main": "./dist/node-rest-helper.js",
   "scripts": {

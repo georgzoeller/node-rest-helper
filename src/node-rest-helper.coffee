@@ -294,7 +294,6 @@ module.exports.APIContext = class APIContext
 
 
   load: (api) ->
-
     throw new Error('Can only load one extension') if @loaded
     @loaded = true
     @debug "Loading #{api.name}, #{api.url}"
