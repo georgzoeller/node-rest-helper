@@ -344,7 +344,6 @@
     }
 
     load(api) {
-      api = require(api);
       if (this.loaded) {
         throw new Error('Can only load one extension');
       }
