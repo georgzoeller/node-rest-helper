@@ -1,6 +1,6 @@
 {
   "name": "node-rest-helper",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Simple REST helper",
   "main": "./dist/node-rest-helper.js",
   "scripts": {
@@ -9,7 +9,10 @@
     "coffeelint": "./node_modules/.bin/coffeelint -c ./src",
     "lint": "./node_modules/.bin/eslint -f table --cache dist",
     "start": "env-cmd ./.env.local node --harmony ./dist/test.js",
-    "prep": "yarn coffeelint && yarn build && yarn test && git add -A"
+    "bump": "npm version patch -m 'Bump to %s' --force",
+    "preversion": "yarn coffeelint && yarn build && yarn test",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags"
   },
   "author": "georgzoeller",
   "license": "MIT",
