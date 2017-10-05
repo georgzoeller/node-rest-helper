@@ -294,6 +294,7 @@ module.exports.APIContext = class APIContext
 
 
   load: (api) ->
+    api = require(api)
     throw new Error('Can only load one extension') if @loaded
     @loaded = true
     @debug "Loading #{api.name}, #{api.url}"
@@ -326,7 +327,7 @@ module.exports.APIContext = class APIContext
     for key, modules of imports
       @[key] = {}
       for mod in modules
-        loadedModule = mod(@)
+        loadedModule = require(mod)(@)
         for name, value of loadedModule
           @debug "  Loaded  #{@name}.#{key}.#{name} from #{mod}"
           @[key][name] = value

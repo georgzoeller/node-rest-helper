@@ -344,6 +344,7 @@
     }
 
     load(api) {
+      api = require(api);
       if (this.loaded) {
         throw new Error('Can only load one extension');
       }
@@ -395,7 +396,7 @@
         this[key] = {};
         for (i = 0, len = modules.length; i < len; i++) {
           mod = modules[i];
-          loadedModule = mod(this);
+          loadedModule = require(mod)(this);
           for (name in loadedModule) {
             value = loadedModule[name];
             this.debug(`  Loaded  ${this.name}.${key}.${name} from ${mod}`);

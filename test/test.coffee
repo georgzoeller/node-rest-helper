@@ -33,7 +33,7 @@ describe 'API Wrapper', ->
     it 'should load a dummy definition', ->
       api = core.create 'test.api'
       api.should.not.have.property('test')
-      api.load require '../test/test-module'
+      api.load  '../test/test-module'
       api.should.have.property('url').which.is.a.String().and.match 'http://localhost'
       api.should.have.property('test').which.is.a.Function()
 
@@ -53,7 +53,7 @@ describe 'RequestBuilder', ->
   request = null
   core = require './../dist/node-rest-helper'
   api = core.create 'test.api'
-  api.load require '../test/test-module'
+  api.load '../test/test-module'
   request = api.test endpoint: 'test1'
 
   it 'request.addHeader should add a header', ->
