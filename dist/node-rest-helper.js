@@ -395,7 +395,7 @@
         this[key] = {};
         for (i = 0, len = modules.length; i < len; i++) {
           mod = modules[i];
-          loadedModule = require(mod)(this);
+          loadedModule = mod(this);
           for (name in loadedModule) {
             value = loadedModule[name];
             this.debug(`  Loaded  ${this.name}.${key}.${name} from ${mod}`);

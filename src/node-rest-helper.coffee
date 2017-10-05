@@ -326,7 +326,7 @@ module.exports.APIContext = class APIContext
     for key, modules of imports
       @[key] = {}
       for mod in modules
-        loadedModule = require(mod)(@)
+        loadedModule = mod(@)
         for name, value of loadedModule
           @debug "  Loaded  #{@name}.#{key}.#{name} from #{mod}"
           @[key][name] = value
