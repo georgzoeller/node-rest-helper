@@ -347,8 +347,8 @@ module.exports.APIContext = class APIContext
   send: (req) ->
     RequestBuilder.send @, req
 
-  createCall: (opts) -> new RequestBuilder({url: @url}, opts)
-  customCall: (CustomClass, opts) -> new CustomClass({url: @url}, opts)
+  createCall: (opts) -> new RequestBuilder(@, opts)
+  customCall: (CustomClass, opts) -> new CustomClass(@, opts)
 
 
 module.exports.create  = (name, load) ->

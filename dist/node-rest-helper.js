@@ -425,15 +425,11 @@
     }
 
     createCall(opts) {
-      return new RequestBuilder({
-        url: this.url
-      }, opts);
+      return new RequestBuilder(this, opts);
     }
 
     customCall(CustomClass, opts) {
-      return new CustomClass({
-        url: this.url
-      }, opts);
+      return new CustomClass(this, opts);
     }
 
   };
